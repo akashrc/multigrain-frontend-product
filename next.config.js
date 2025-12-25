@@ -9,7 +9,7 @@ const nextConfig = {
                 name: 'product',
                 filename: 'static/chunks/remoteEntry.js',
                 exposes: {
-                    // Example: './ProductList': './components/ProductList.tsx',
+                    './ProductList': './components/ProductList.tsx',
                 },
                 shared: {},
             })
