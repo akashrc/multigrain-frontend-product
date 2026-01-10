@@ -17,6 +17,16 @@ const GET_PRODUCTS = gql`
   }
 `;
 
+interface Product {
+    id: string;
+    name: string;
+    price: number;
+    description: string;
+    imageUrl: string;
+    weight: string;
+    stock: number;
+}
+
 export default function ProductList() {
     const { loading, error, data } = useQuery(GET_PRODUCTS);
 
@@ -34,7 +44,7 @@ export default function ProductList() {
 
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {data.products.map((product: any) => (
+            {data.products.map((product: Product) => (
                 <ProductCard key={product.id} product={product} />
             ))}
         </div>
